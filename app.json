@@ -13,7 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to take photos of numbers.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to the photo library to select photos of numbers.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to the photo library to save photos of numbers."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +30,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "This app needs access to the photo library to select photos of numbers.",
+          "cameraPermission": "This app needs access to the camera to take photos of numbers."
+        }
+      ]
+    ]
   }
 }
