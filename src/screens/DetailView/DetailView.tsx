@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Alert, SafeAreaView, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Clipboard from 'expo-clipboard';
-import { styles } from './styles'; 
+import { styles } from './DetailView.styles'; 
 
 // IMAGEN HARDCODEADA
 const LocalDetectedImage = require('../../../../assets/test-image.png'); 
