@@ -1,5 +1,3 @@
-// origen/pantallas/DetailView/styles.ts
-
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -7,22 +5,33 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F2F4F8', 
   },
+
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingVertical: 50,
+    position: 'relative',
   },
+
+  backButtonContainer: {
+    position: 'absolute',
+    left: 20,
+    zIndex: 1,
+  },
+
   headerTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
   },
+
   content: {
     padding: 20,
     flex: 1,
   },
+
   card: {
     backgroundColor: '#fff',
     borderRadius: 20,
@@ -35,38 +44,45 @@ export const styles = StyleSheet.create({
     shadowRadius: 10,
     elevation: 3,
   },
+
   label: {
     fontSize: 14,
     color: '#888',
     marginBottom: 10,
   },
+
   detectedNumber: {
     fontSize: 48,
     fontWeight: '500',
     color: '#2F80ED',
     marginBottom: 5,
   },
+
   date: {
     fontSize: 14,
     color: '#aaa',
   },
+
   imageCard: {
-    height: 200, 
+    height: 300, 
     justifyContent: 'center',
     padding: 10, 
     backgroundColor: '#F5F5F5',
   },
+
   detectedImage: { 
     width: '100%',
     height: '100%',
     borderRadius: 15,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
   },
+
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10,
   },
+
   buttonPrimary: {
     backgroundColor: '#2979FF',
     flexDirection: 'row',
@@ -77,6 +93,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     flex: 0.48,
   },
+
   buttonDestructive: {
     backgroundColor: '#fff',
     borderWidth: 1,
@@ -89,11 +106,13 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     flex: 0.48,
   },
+
   buttonTextPrimary: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
-  },
+  }, 
+
   buttonTextDestructive: {
     color: '#E53935',
     fontSize: 16,
