@@ -1,6 +1,6 @@
 export interface ScanRecord {
     id: string;
-                                
+
     // Imágenes
     imageUri: string;
     originalImageUri?: string;
@@ -14,7 +14,8 @@ export interface ScanRecord {
     note?: string;
 }
 
-export interface DetailViewProps {
-    navigation?: any; 
-    record: ScanRecord; 
-}
+export type RootStackParamList = {
+    Home: undefined;
+    Detail: { record: ScanRecord };
+    //History: undefined;
+};

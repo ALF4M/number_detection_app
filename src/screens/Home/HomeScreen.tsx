@@ -1,19 +1,27 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import styles from './HomeScreen.styles';
+import * as ImagePicker from 'expo-image-picker';
+import { RootStackParamList } from '../../types';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { View, Text, TouchableOpacity, Alert } from 'react-native';
 
 export default function HomeScreen() {
+	const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
 	const pickImage = async () => {
 		let result = await ImagePicker.launchImageLibraryAsync({
 			mediaTypes: ['images'],
 			quality: 1,
+			allowsEditing: true
+
 		});
 
 		if (!result.canceled && result.assets && result.assets.length > 0) {
 			console.log(result.assets[0].uri);
-			// TODO: Con el resultado llamarlo al componente de edicion de imagen
+			// TODO: Guardar el resultado en la base de datos
+			//navigation.navigate('History')
 		}
 	};
 
@@ -28,11 +36,13 @@ export default function HomeScreen() {
 		const result = await ImagePicker.launchCameraAsync({
 			mediaTypes: ['images'],
 			quality: 1,
+			allowsEditing: true
 		});
 
 		if (!result.canceled && result.assets && result.assets.length > 0) {
 			console.log(result.assets[0].uri);
-			// TODO: Con el resultado llamarlo al componente de edicion de imagen
+			// TODO: Guardar el resultado en la base de datos
+			//navigation.navigate('History')
 		}
 	};
 
@@ -63,7 +73,11 @@ export default function HomeScreen() {
 				<Text style={[styles.buttonText, styles.buttonTextGallery]}>Importar desde galería</Text>
 			</TouchableOpacity>
 
-			<TouchableOpacity style={styles.history} activeOpacity={0.6}>
+			<TouchableOpacity
+				style={styles.history}
+				activeOpacity={0.6}
+			/* onPress={() => navigation.navigate('History')}*/
+			>
 				<Ionicons name="time-outline" size={20} color="#6B7280" />
 				<Text style={styles.historyText}>Ver historial</Text>
 			</TouchableOpacity>
