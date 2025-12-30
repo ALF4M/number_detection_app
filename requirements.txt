@@ -1,0 +1,4 @@
+flask
+tensorflow # Si estas en Mac puede que debas usar tensorflow-macos
+pillow
+numpy

@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "number-detection-app",
+    "slug": "number-detection-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to take photos of numbers.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to the photo library to select photos of numbers.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs access to the photo library to save photos of numbers."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "This app needs access to the photo library to select photos of numbers.",
+          "cameraPermission": "This app needs access to the camera to take photos of numbers."
+        }
+      ]
+    ]
+  }
+}
