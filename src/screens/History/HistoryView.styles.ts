@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const palette = {
+export const palette = {
   bg: '#F5F7FB',
   card: '#FFFFFF',
   text: '#0F172A',
@@ -13,15 +13,32 @@ const palette = {
 };
 
 export const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: palette.bg,
+  screen: { flex: 1, backgroundColor: palette.bg },
+
+  header: {
+    height: 56,
+    paddingHorizontal: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  backBtn: {
+    width: 40, height: 40,
+    alignItems: 'center', justifyContent: 'center',
+    marginLeft: 4,
+  },
+
+  title: {
+    fontSize: 17,
+    color: palette.text,
+    fontWeight: '600',
+    marginLeft: 4
   },
 
   list: {
     paddingHorizontal: 16,
     paddingTop: 8,
-    paddingBottom: 24,
+    paddingBottom: 24
   },
 
   item: {
@@ -51,23 +68,34 @@ export const styles = StyleSheet.create({
 
   thumb: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
 
   meta: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 
   idText: {
     color: palette.link,
     fontSize: 16,
     fontWeight: '700',
-    marginBottom: 2,
+    marginBottom: 2
   },
 
   date: {
     color: palette.sub,
-    fontSize: 13,
+    fontSize: 13
+  },
+
+  emptyWrap: {
+    marginTop: 64,
+    alignItems: 'center',
+    gap: 8
+  },
+
+  emptyText: {
+    color: palette.sub,
+    fontSize: 14
   },
 });

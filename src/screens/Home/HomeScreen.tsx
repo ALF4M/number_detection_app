@@ -5,6 +5,7 @@ import { RootStackParamList } from '../../types';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { StorageService } from '../../services/StorageService';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 
 export default function HomeScreen() {
@@ -20,8 +21,8 @@ export default function HomeScreen() {
 
 		if (!result.canceled && result.assets && result.assets.length > 0) {
 			console.log(result.assets[0].uri);
-			// TODO: Guardar el resultado en la base de datos
-			//navigation.navigate('History')
+			await StorageService.saveScanRecord(result.assets[0].uri);
+			navigation.navigate('History');
 		}
 	};
 
@@ -41,8 +42,8 @@ export default function HomeScreen() {
 
 		if (!result.canceled && result.assets && result.assets.length > 0) {
 			console.log(result.assets[0].uri);
-			// TODO: Guardar el resultado en la base de datos
-			//navigation.navigate('History')
+			await StorageService.saveScanRecord(result.assets[0].uri);
+			navigation.navigate('History');
 		}
 	};
 
@@ -76,7 +77,7 @@ export default function HomeScreen() {
 			<TouchableOpacity
 				style={styles.history}
 				activeOpacity={0.6}
-			/* onPress={() => navigation.navigate('History')}*/
+				onPress={() => navigation.navigate('History')}
 			>
 				<Ionicons name="time-outline" size={20} color="#6B7280" />
 				<Text style={styles.historyText}>Ver historial</Text>
