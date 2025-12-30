@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './src/screens/Home/HomeScreen';
 import DetailView from './src/screens/DetailView/DetailView';
-//import HistoryView from './src/screens/History/HistoryView';
+import HistoryView from './src/screens/History/HistoryView';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Detail" component={DetailView} />
-        {/* <Stack.Screen name="History" component={HistoryView} /> */}
+        <Stack.Screen name="History" component={HistoryView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

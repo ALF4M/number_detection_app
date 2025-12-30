@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { RootStackParamList } from '../../types';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { StorageService } from '../../services/StorageService';
 import { View, Text, TouchableOpacity, Alert, Image } from 'react-native';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 
@@ -38,6 +39,7 @@ export default function DetailView() {
     };
 
     const handleDelete = async () => {
+        await StorageService.deleteScanRecord(record.id);
         navigation.goBack()
     };
 

@@ -17,5 +17,5 @@ export interface ScanRecord {
 export type RootStackParamList = {
     Home: undefined;
     Detail: { record: ScanRecord };
-    //History: undefined;
+    History: undefined;
 };
